@@ -4,3 +4,4 @@
 3) Windows machine 
 4) Linux machine
 5) Autoscaling lab
+6) Amazon SQS 
