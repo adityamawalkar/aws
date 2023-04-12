@@ -5,3 +5,4 @@
 4) Linux machine
 5) Autoscaling lab
 6) Amazon SQS 
+7) Cloudtrail lab
