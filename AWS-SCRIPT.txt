@@ -1,0 +1,43 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+
+    "Parameters": {
+        "vpcname": {
+            "Type": "String",
+            "Description": "Provide the vpc name",
+            "Default": "VPC22-2233"
+        },
+        "cidrblock": {
+            "Description": "Provide the CIDR Block for VPC",
+            "Default": "172.18.0.0/16",   
+            "Type": "String" 
+                   
+          }    
+    },
+    "Resources": {
+        "ADITYAVPC" : {
+            "Type" : "AWS::EC2::VPC",
+            "Properties" : {
+                "CidrBlock" :  { "Ref": "cidrblock" },                  
+                "EnableDnsSupport" : "true",
+                "EnableDnsHostnames" : "true",
+                "Tags" : [ 
+                    {
+                      "Key" : "Env", "Value" : "DEV"
+                    },
+                    {"Key" : "Name", "Value" : { "Ref": "vpcname" }},
+                    {"Key" : "Dep", "Value" : "HR"}
+                 ]
+              }
+        }
+    },
+    "Outputs" : {
+        "myVPCID" : {
+          "Description" : "The ID of the VPC",
+          "Value" : { "Ref" : "ADITYAVPC" },
+          "Export" : {
+            "Name" : {"Fn::Sub": "${AWS::StackName}-myVPCID" }
+          }
+        }
+      }
+}
