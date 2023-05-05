@@ -7,3 +7,4 @@
 6) Amazon SQS 
 7) Cloudtrail lab
 8) API Gateway
+9) AWS script
