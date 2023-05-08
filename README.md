@@ -8,3 +8,4 @@
 7) Cloudtrail lab
 8) API Gateway
 9) AWS script
+10) S3 bucket lab
